@@ -29,6 +29,34 @@ python -m pip install -e .
 
 `sounddevice` のインストールに失敗する場合は、先に `brew install portaudio` を試してください。Whisperモデルの初回利用時にはインターネット接続が必要です。
 
+## ディレクトリ構成
+
+```text
+meeting-cli/
+├── docs/
+│   └── requirement.md
+├── recordings/
+│   └── YYYY-MM-DD_HHMM-SS/
+│       ├── audio.wav
+│       └── transcript.txt
+├── src/
+│   └── meeting_cli/
+│       ├── __init__.py
+│       ├── cli.py
+│       ├── recorder.py
+│       ├── storage.py
+│       └── transcriber.py
+├── tests/
+│   ├── conftest.py
+│   ├── test_cli.py
+│   ├── test_recorder.py
+│   ├── test_storage.py
+│   └── test_transcriber.py
+├── pyproject.toml
+├── README.md
+└── requirements.txt
+```
+
 ## 使い方
 
 録音を開始し、`Ctrl+C` で停止すると自動的に文字起こしします。
